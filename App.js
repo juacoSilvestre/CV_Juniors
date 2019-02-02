@@ -1,13 +1,14 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
+import { AppLoading, Asset, Font, Icon, SplashScreen } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
-
+  
+ 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
@@ -25,6 +26,7 @@ export default class App extends React.Component {
         </View>
       );
     }
+    
   }
 
   _loadResourcesAsync = async () => {
@@ -38,7 +40,9 @@ export default class App extends React.Component {
         ...Icon.Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        //'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf',
+        'against_modern_football': require('./assets/fonts/font1.otf',
+        ),
       }),
     ]);
   };
@@ -52,7 +56,7 @@ export default class App extends React.Component {
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
   };
-}
+};
 
 const styles = StyleSheet.create({
   container: {

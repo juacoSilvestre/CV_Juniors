@@ -1,17 +1,19 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
+import { Font } from 'expo';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ContactScreen from '../screens/ContactScreen';
+
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Principal',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -28,7 +30,7 @@ const ContactStack = createStackNavigator({
 });
 
 ContactStack.navigationOptions = {
-  tabBarLabel: 'Contact',
+  tabBarLabel: 'Contacto',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -44,4 +46,18 @@ ContactStack.navigationOptions = {
 export default createMaterialTopTabNavigator({
   HomeStack,
   ContactStack,
-},style={backgroundColor: '#fff'});
+},
+{
+  tabBarOptions: {
+    activeTintColor: '#ff3300',
+    inactiveTintColor: 'black',
+    labelStyle: {
+      fontSize: 20,
+      fontFamily: "against_modern_football",
+
+    },
+    style: {
+      backgroundColor: '#18d06c',
+    },
+  },
+});
