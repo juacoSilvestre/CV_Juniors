@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.CVJ.CVJuniors",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.CVJ.CVJuniors"
     }
   }
 }
